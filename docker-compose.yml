@@ -1,0 +1,21 @@
+services:
+  proxy:
+    container_name: "proxy_nginx"
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    image: nginxproxy
+    ports:
+      - '82:80'
+    networks:
+      - nginx_web
+  web:
+    container_name: "web_httpd"
+    image: "httpd:latest"
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    networks:
+      - nginx_web
+
+networks:
+  nginx_web:
