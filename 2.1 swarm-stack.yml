@@ -3,6 +3,12 @@ services:
   # do moi truong produc nen ta can 1 image on dinh (khong co / ignore build image)
   # neu ta khong co co che node swarm chay compose binh` thuogn thi` he thong
   # tu dong ignore (deploy)
+
+  # docker swarm giao tiep voi nhau qua network scope swarm , driver overplay
+  # connect voi nhau qua join token (worker / manager) 
+  # phan phoi chia deu cac task cho cac node (replicas)
+  # 1 replicas dump thi` lap tuc co replicas khac khac phuc va duoc phuc hoi lien tuc
+  # dam bao service luon on dinh voi so luong replicas day du
   redis:
     image: redis:alpine
     networks:
