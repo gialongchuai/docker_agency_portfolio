@@ -1,6 +1,8 @@
 version: "3"
 services:
-
+  # do moi truong produc nen ta can 1 image on dinh (khong co / ignore build image)
+  # neu ta khong co co che node swarm chay compose binh` thuogn thi` he thong
+  # tu dong ignore (deploy)
   redis:
     image: redis:alpine
     networks:
